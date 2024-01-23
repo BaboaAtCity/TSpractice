@@ -31,7 +31,7 @@ function addTodoItem(todo: string): toDoItem {
     return newTodo
 }
 
-function getNextId(items: Array<toDoItem>): number {
+function getNextId<T extends { id: number }>(items: T[]): number {
     return items.reduce((max, x) => x.id > max ? x.id : max, 0) + 1
 }
 
